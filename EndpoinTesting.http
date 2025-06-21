@@ -49,6 +49,6 @@ Authorization: Bearer {{Token}}
 }
 
 ### DELETE user by ID
-DELETE {{BaseUrl}}/api/users/2
+DELETE {{BaseUrl}}/api/users/1
 Authorization: Bearer {{Token}}
 
