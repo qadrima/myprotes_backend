@@ -134,7 +134,7 @@ namespace CrudApiDemo.Controllers
             var user = await _context.Users.FindAsync(id);
 
             if (user == null)
-                return NotFound(new { message = "User not found." });
+                return NotFound(new ApiResponse<User>(401, "User not found.", null, "Not Found"));
 
             // Update fields
             user.Name = dto.Name;
@@ -146,20 +146,18 @@ namespace CrudApiDemo.Controllers
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
 
-            return Ok(new
+            var userDetail = new UserDetail
             {
-                message = "User updated successfully.",
-                data = new
-                {
-                    user.Id,
-                    user.Name,
-                    user.Email,
-                    user.PhoneNumber,
-                    user.Status,
-                    user.CreatedAt,
-                    user.UpdatedAt
-                }
-            });
+                Id = user.Id,
+                Name = user.Name,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                Status = user.Status,
+                CreatedAt = user.CreatedAt,
+                UpdatedAt = user.UpdatedAt
+            };
+
+            return Ok(new ApiResponse<UserDetail>(200, "User updated successfully.", userDetail));
         }
 
         [HttpDelete("{id}")]

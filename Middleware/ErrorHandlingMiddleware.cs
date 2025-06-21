@@ -16,7 +16,7 @@ public class ErrorHandlingMiddleware
     {
         try
         {
-            await _next(context);  // lanjut ke middleware/endpoint berikutnya
+            await _next(context);
         }
         catch (Exception ex)
         {
@@ -34,7 +34,7 @@ public class ErrorHandlingMiddleware
             500,
             "Internal Server Error",
             null,
-            exception.Message  // bisa juga exception.StackTrace atau custom error code
+            exception.Message
         );
 
         var json = JsonSerializer.Serialize(response);
