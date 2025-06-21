@@ -1,0 +1,30 @@
+# Build hasil output
+bin/
+obj/
+
+# File konfigurasi user lokal
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Folder paket NuGet
+*.nupkg
+.nuget/
+
+# Log dan debug
+*.log
+*.vs/
+
+# Publish output
+publish/
+
+# Rider IDE
+.idea/
+
+# File temporary
+*.tmp
+*.temp
+
+# Folder yang dihasilkan tool
+TestResults/
