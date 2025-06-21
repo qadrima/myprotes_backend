@@ -4,8 +4,8 @@
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository>
+   git clone https://github.com/qadrima/myprotes_backend.git
+   cd myprotes_backend
    ```
 
 2. Update the database connection string in `appsettings.json`:

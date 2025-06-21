@@ -1,5 +1,5 @@
 @BaseUrl = http://localhost:5114
-@Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwiZW1haWwiOiJqb2huQGV4YW1wbGUuY29tIiwic3RhdHVzIjoiQWN0aXZlIiwianRpIjoiYTAzMTY0MmItNzJlOS00ZWRkLWI2MDUtYjRmNmQ2MWE3NWYxIiwiZXhwIjoxNzUwNDc5MjMxLCJpc3MiOiJZb3VyQXBwIiwiYXVkIjoiWW91ckFwcEF1ZGllbmNlIn0.RNowzI6LTk_5arSxFt-wi5UkVwt6umMEF_4opwC061g
+@Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJqb2huQGV4YW1wbGUuY29tIiwic3RhdHVzIjoiQWN0aXZlIiwianRpIjoiYzExMmViNmYtM2U2Ny00ZTdlLWIyNmEtMTc0ZTFkNDhkNjlhIiwiZXhwIjoxNzUwNDgyNzQzLCJpc3MiOiJZb3VyQXBwIiwiYXVkIjoiWW91ckFwcEF1ZGllbmNlIn0.5Id_Ag7dKxeccEF9zBXSz_AvHAvYChQeQgHJZfYH6bY
 
 ### Login
 POST {{BaseUrl}}/api/users/login
@@ -7,7 +7,7 @@ Content-Type: application/json
 
 {
   "email": "john@example.com",
-  "password": "1233"
+  "password": "123"
 }
 
 ### Register / Create new user
@@ -32,22 +32,23 @@ Accept: application/json
 Authorization: Bearer {{Token}}
 
 ### GET user by ID
-GET {{BaseUrl}}/api/users/3
+GET {{BaseUrl}}/api/users/1
 Accept: application/json
 Authorization: Bearer {{Token}}
 
 ### UPDATE user by ID
-PUT {{BaseUrl}}/api/users/3
+PUT {{BaseUrl}}/api/users/1
 Content-Type: application/json
 Authorization: Bearer {{Token}}
 
 {
   "name": "John D.J",
-  "email": "johnedit@example.com",
+  "email": "john.edit@example.com",
   "phoneNumber": "081239999",
   "status": "Inactive"
 }
 
 ### DELETE user by ID
-DELETE {{BaseUrl}}/api/users/2
+DELETE {{BaseUrl}}/api/users/1
+Authorization: Bearer {{Token}}
 
